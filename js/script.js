@@ -1,26 +1,63 @@
-var keepGoing="Y";
-var number=Math.floor(Math.random()*10+1);
+
+    var keepGoing = "Y";
+    var number = Math.floor(Math.random() * 10 + 1);
+    var guess;
+
+
+    function game() {
+
+      while (keepGoing === "Y") {
+        guess = prompt("Gissa ett tal mellan 1-10");
+        guess=parseInt(guess);
+        if(typeof guess === 'number'){
+
+        if (guess === number) {
+
+          number = Math.floor(Math.random() * 10 + 1);
+          alert("Rätt svar!");
+          keepGoing = prompt("Spela igen? Y/N")
+
+        } else {
+          alert("Fel svar! Försök igen")
+        }
+      }
+      else{
+        alert("Fel input");
+    }
+    }
+    }
 
 
 
-function game(){
+    ///EXEMPEL FRÅN WEBBEN
+    var nIntervId;
 
-while(keepGoing=="Y"){
-var guess = prompt("Gissa ett tal mellan 1-10");
+    function changeColor() {
+      nIntervId = setInterval(flashText, 1000);
+    }
 
-if (guess==number){
-number=Math.floor(Math.random()*10+1);
-alert("Rätt svar!");
-keepGoing=prompt("Spela igen? Y/N")
+    function flashText() {
+      var oElem = document.getElementById('my_box');
+      oElem.style.color = oElem.style.color = oElem.style.color == 'red' ? 'blue' : 'red';
+      // 'red' ? 'blue' : 'red' is a ternary operator.
+    }
 
-}else{
-  alert("Fel svar! Försök igen")
-}
-}
-}
+    function stopTextColor() {
+      clearInterval(nIntervId);
+    }
 
-function updateClock() {
-  // Ivo's content to create the date.
-  document.getElementById('demo').innerHTML = Date();
-  setInterval(updateClock, 1000);
-}
+
+    //Datum och tid, start och stop.
+    var myVar;
+
+    function timer(){
+      myVar=setInterval(Clock,1000);
+    }
+
+    function stopTimer(){
+    clearInterval(myVar);
+    }
+
+    function Clock() {
+      document.getElementById('demo').innerHTML = Date();
+    }
