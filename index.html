@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="style/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/script.js"></script>
     <title>JawaScript</title>
 </head>
 
-<body onload="changeColor();">
+<body onload="changeColor();animate_string('carousel');">
 
 <main>
     <h1>JavaScript Test</h1>
@@ -21,15 +21,59 @@
     <button onclick="stopTimer();" type="button" name="button">stop time</button>
 
     <p id="svar"></p>
-    <p id="demo"></p>
+    <p id="demo" style="font-size: 20px;"></p>
 
 
     <div id="my_box">
         <p>Hello World</p>
     </div>
 
-    <button onclick="stopTextColor();">Stop</button>
 
+
+    <button onclick="findCheapestStore(meatSoup, 'meat soup');">Billigaste köttsoppan</button>
+    <button onclick="findCheapestStore(onionSoup, 'onion soup');">Billigaste löksoppan</button>
+    <button onclick="findCheapestStore(esparagusSoup, 'esparagous soup');">Billigaste sparrissoppan</button>
+
+
+    <button onclick="printContent('my_box')">print helloworld</button>
+    <button onclick="print_current_page();">print whole page</button>
+
+
+<figure>
+<img src="images/vamaveche4.jpg" id="vamaveche" style="display: block; margin-top: 30px;">
+<figcaption id="carousel">************Hello everybady*******</figcaption>
+</figure>
+
+    <section>
+
+        Nummer1: <input id="firstnumber" type="text">
+        <br>
+        Nummer2: <input id="secondnumber"type="text">
+        <br>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+        <br>
+        <p id="result"></p>
+
+    </section>
+
+    <section>
+        <label>Dag:
+      <input id="day"type="text" placeholder="t.ex. 12, 3, 43">
+        </label>
+        <br>
+        <label>Månad:
+         <input id="month" type="text" placeholder="1 = januari, 12 = december    "></label>
+        <br>
+        <label>År:
+         <input id="year"type="text" placeholder="2001, 1992">
+        </label>
+        <br>
+        <button onclick="dayName()">Räkna ut</button>
+        <br>
+        <p id="weekday"></p>
+
+    </section>
 
     <script>
 
